@@ -8,6 +8,7 @@ from django.views.generic import (
     ListView,
     CreateView,
     UpdateView,
+    DeleteView,
 )
 
 from .models import Card
@@ -21,6 +22,10 @@ class CardCreateView(CreateView):
     model = Card
     fields = ["question", "answer", "box"]
     success_url = reverse_lazy("card-create")
+
+class CardDeleteView(DeleteView):
+    model = Card
+    success_url = reverse_lazy("card-list")
 
 class CardUpdateView(CardCreateView, UpdateView):
     success_url = reverse_lazy("card-list")

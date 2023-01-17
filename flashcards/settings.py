@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'cards.apps.CardsConfig',
     'ckeditor',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [

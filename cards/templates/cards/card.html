@@ -8,6 +8,9 @@
         <a href="{% url 'card-update' card.id %}" role="button">
             🖋 Edit Card
         </a>
+        <a href="{% url 'card-delete' card.id %}" role="button">
+            🗑️ Delete Card
+        </a>
     {% else %}
         <details>
             <summary>Reveal Answer</summary>
@@ -16,5 +19,12 @@
         <hr>
         {% include "cards/card_check_form.html" with solved=True %}
         {% include "cards/card_check_form.html" with solved=False %}
+        <hr>
+        <a href="{% url 'card-update' card.id %}" role="button">
+            🖋 Edit Card
+        </a>
+        <a href="{% url 'card-delete' card.id %}" role="button">
+            🗑️ Delete Card
+        </a>
     {% endif %}
 </article>
